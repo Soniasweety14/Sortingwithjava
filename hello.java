@@ -46,34 +46,34 @@ import java.util.Scanner;
             }
             show(arr, l);
         }
-        public static void counting(int arr[], int l){
+        public static void counting(int arr1[], int l){
             System.out.println("Sorting by Count sort");
             int largest = Integer.MIN_VALUE;
             for(int i=0; i<l; i++){
-                largest= Math.max(largest, arr[i]);
+                largest = Math.max(largest, arr1[i]);
             }
-            int count[]= new int[largest+1];
+            int Count[]=new int[largest+1];
             for(int i=0; i<l; i++){
-                count[arr[i]]++;
+                Count[arr1[i]]++;
             }
             int j=0;
-            for(int i=count.length-1; i>=0; i--){
-                while(count[i]<0){
-                    arr[j]=i;
+            for(int i=0; i<Count.length; i++){
+                while(Count[i]>0){
+                    arr1[j]=i;
                     j++;
-                    count[i]--;
+                    Count[i]--;
                 }
             }
-            show(arr, l);
+            show(arr1, l);
         }
         public static void main(String[] args) {
             int a[]={3,6,2,1,8,7,4,5,3,1};
             int l=a.length;
             System.out.println("Orignal array");
             show(a,l);
-            bubble(a, l);
-            selection(a,l);
-            insertion(a, l);
+            // bubble(a, l);
+            // selection(a,l);
+            // insertion(a, l);
             counting(a, l);
 
         }
